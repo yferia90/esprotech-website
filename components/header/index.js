@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 const Header =  () => {
 
@@ -19,10 +20,12 @@ const Header =  () => {
     <>
     <header className="flex z-40 items-center justify-between bg-white py-3 px-5 shadow-lg fixed top-0 w-full">
       <div>
-        <a href="/">
-          <Image className=""
-          src='/logo-esprotech.png' alt='EsproTech' width={150} height={31}/>
-        </a>
+        <Link href="/">
+          <a>
+            <Image className=""
+            src='/logo-esprotech.png' alt='EsproTech' width={150} height={31}/>
+          </a>
+        </Link>
       </div>
       <div>
         <div onClick={menu} className="md:hidden w-11 h-11 py-2 flex justify-center items-center text-lg border border-transparent text-slate-800 rounded-xl hover:border-slate-200
@@ -36,21 +39,21 @@ const Header =  () => {
 
         {/*MENU EN PC*/}
         <nav className="flex-wrap hidden md:flex justify-end bg-white">
-          <a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
-          href="#">Inicio</a>
-          <a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          >Inicio</a></Link>
+          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
-          href="#">¿Quiénes somos?</a>
-          <a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          >¿Quiénes somos?</a></Link>
+          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
-           href="#">Productos y servicios</a>
-          <a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+           >Productos y servicios</a></Link>
+          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
-           href="#">Equipos IT</a>
-          <a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+           >Equipos IT</a></Link>
+          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
-           href="#">Contáctanos</a>
+           >Contáctanos</a></Link>
         </nav>
       </div>
     </header>
@@ -58,21 +61,21 @@ const Header =  () => {
     {/*MENU EN EL MOVIL*/}
     <nav className={`${openMenu?'right-0':'-right-72'} transition-all duration-300 flex-wrap flex md:hidden fixed bg-white 
     w-64 h-screen top-16 z-30 flex-col items-center pt-6 px-3 shadow-lg`}>
-      <a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
-      href="#">Inicio</a>
-      <a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      >Inicio</a></Link>
+      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
-      href="#">¿Quiénes somos?</a>
-      <a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      >¿Quiénes somos?</a></Link>
+      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
-       href="#">Productos y servicios</a>
-      <a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+       >Productos y servicios</a></Link>
+      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
-       href="#">Equipos IT</a>
-      <a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+       >Equipos IT</a></Link>
+      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
-       href="#">Contáctanos</a>
+       >Contáctanos</a></Link>
     </nav>
 
     {/*IMAGEN DE PORTADA*/}

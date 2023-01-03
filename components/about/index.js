@@ -1,5 +1,6 @@
 export default function About() {
   return (
+  <div className="bg-slate-100">
     <div className="flex flex-wrap justify-center items-stretch bottom-10 relative max-w-5xl mx-auto">
       <div className="w-full px-3 pt-0 pb-5 sm:w-1/2 sm:pb-0">
         <p className="w-full p-3 rounded-xl bg-white text-lg text-slate-900 font-semibold shadow-lg h-full">
@@ -16,5 +17,6 @@ export default function About() {
         </p>
       </div>
     </div>
+  </div>
   );
 }
