@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.h-60vh{
+  height: 50vh;
+}
+.aspect-w-1>* {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/*.image-w-full span {
+  width: 100% !important;
+  height: auto !important;
+  min-width: 100%;
+  min-height: auto;
+  display: block !important;
+}
+.image-w-full > span > span {
+  display: none !important;
+}
+.image-w-full > img {
+  position: relative !important;
+}*/
