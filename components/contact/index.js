@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Contact = function () {
   return (
-    <div className="bg-[url('/bg.jpg')] bg-cover bg-center">
+    <div id="contact" className="bg-[url('/bg.jpg')] bg-cover bg-center">
       <div className="py-6 px-5 text-white text-2xl md:text-3xl font-semibold">
         <h1 className="text-center">Contáctanos</h1>
       </div>

@@ -5,6 +5,16 @@
 .h-60vh{
   height: 50vh;
 }
+
+.whatsapp {
+  min-width: 50px;
+  min-height: 50px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 999;
+}
+
 .aspect-w-1>* {
   position: absolute;
   height: 100%;

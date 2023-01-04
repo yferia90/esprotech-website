@@ -2,7 +2,7 @@ import Card from "components/card";
 
 function Services() {
   return (
-    <div className="bg-[url('/bg.jpg')] bg-cover bg-center pb-6">
+    <div id="services" className="bg-[url('/bg.jpg')] bg-cover bg-center pb-6">
       <h3 className="text-2xl md:text-3xl text-white px-5 pb-5 pt-12 font-semibold text-center">
         Catálogo de productos y servicios
       </h3>

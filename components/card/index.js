@@ -19,15 +19,15 @@ export default function Card(props) {
         <p className="font-base p-3 line-clamp-4 pb-0 mb-3">
           {props?.description}
         </p>
-        <Link href={props?.link}>
-          <a
+        {/* <Link href={props?.link}> */}
+          {/* <a
             className={`${props?.btn?'inline-block':'hidden'} py-2 px-3 text-xs text-slate-800 border border-slate-200
             bg-transparent hover:border-red-600 hover:text-red-600 rounded-xl duration-300
             transition-all mb-3 ml-3 inline-block`}
           >
             Saber más
-          </a>
-        </Link>
+          </a> */}
+        {/* </Link> */}
       </div>
     </div>
   </div>  

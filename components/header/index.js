@@ -1,12 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark, faWhatsapp } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 
 const Header =  () => {
-
-  // abrir y cerrar el menu movil
   const [openMenu, setOpenMenu] = useState(false);
   const menu = () => {
     if(openMenu){
@@ -39,19 +37,19 @@ const Header =  () => {
 
         {/*MENU EN PC*/}
         <nav className="flex-wrap hidden md:flex justify-end bg-white">
-          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          <Link href="/"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
           >Inicio</a></Link>
-          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          {/* <Link href="#about"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
-          >¿Quiénes somos?</a></Link>
-          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          >¿Quiénes somos?</a></Link> */}
+          <Link href="#services"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
            >Productos y servicios</a></Link>
-          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          <Link href="#teams"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
            >Equipos IT</a></Link>
-          <Link href="#"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          <Link href="#contact"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
            >Contáctanos</a></Link>
         </nav>
@@ -61,19 +59,19 @@ const Header =  () => {
     {/*MENU EN EL MOVIL*/}
     <nav className={`${openMenu?'right-0':'-right-72'} transition-all duration-300 flex-wrap flex md:hidden fixed bg-white 
     w-64 h-screen top-16 z-30 flex-col items-center pt-6 px-3 shadow-lg`}>
-      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      <Link href="#home"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
       >Inicio</a></Link>
-      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      {/* <Link href="#home"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
-      >¿Quiénes somos?</a></Link>
-      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      >¿Quiénes somos?</a></Link> */}
+      <Link href="#services"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
        >Productos y servicios</a></Link>
-      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      <Link href="#teams"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
        >Equipos IT</a></Link>
-      <Link href="#"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      <Link href="#contact"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
        >Contáctanos</a></Link>
     </nav>
@@ -84,6 +82,11 @@ const Header =  () => {
       ¿Quiénes somos?
       </h3>
     </div>
+
+    {/* Incluyendo WhatsApp */}
+    <a className='whatsapp' href="https://wa.me/+5491158416258" target="_blank">
+      <Image src='/whatsapp.png' layout='fill'/>
+    </a>
     </>
   )
 }

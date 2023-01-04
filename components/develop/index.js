@@ -2,7 +2,7 @@ import Card from "components/card";
 
 function Develop() {
   return (
-    <div className="bg-slate-100 pb-6">
+    <div id="teams" className="bg-slate-100 pb-6">
       <h3 className="text-2xl md:text-3xl text-slate-900 px-5 pb-5 pt-12 font-semibold text-center">
         Conformamos equipos de desarrollo de software
       </h3>
@@ -24,6 +24,12 @@ function Develop() {
           link="#"
           title="Integramos aplicaciones con el ERP opensource Odoo"
           description="Realizamos integraciones de aplicaciones con el moderno y robusto ERP libre Odoo"
+        />
+        <Card
+          img="/teams-develop/react-native.png"
+          link="#"
+          title="Ofrecemos Aplicaciones móviles"
+          description="Desarrollamos aplicaciones móviles empleando el mismo stack tecnológico para web"
         />
         <Card
           img="/teams-develop/python.png"
