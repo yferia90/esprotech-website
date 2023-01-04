@@ -84,7 +84,7 @@ const Header =  () => {
     </div>
 
     {/* Incluyendo WhatsApp */}
-    <a className='whatsapp' href="https://wa.me/+5491158416258" target="_blank">
+    <a className='whatsapp' href="https://wa.me/+5491158416258" target="_blank" rel="noreferrer">
       <Image src='/whatsapp.png' layout='fill'/>
     </a>
     </>
