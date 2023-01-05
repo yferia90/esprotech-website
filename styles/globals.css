@@ -15,6 +15,10 @@
   z-index: 999;
 }
 
+.error-message-form {
+  margin-top: -16px;
+}
+
 .aspect-w-1>* {
   position: absolute;
   height: 100%;
