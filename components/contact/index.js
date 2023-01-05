@@ -58,8 +58,6 @@ const Contact = () => {
 					} else if (!disabled && Object.keys(errors).length > 0) {
 						setDisabled(true);
 					}
-
-          console.log('ERRORES!!!',errors);
 					return errors;
 				}}
 				onSubmit={(values, { resetForm }) => {
