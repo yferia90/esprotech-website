@@ -12,6 +12,7 @@ const Login = () => {
 
     useEffect(() => {
         router.prefetch(false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     const handleSubmitLogin = async (event) => {

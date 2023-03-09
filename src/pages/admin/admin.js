@@ -49,6 +49,7 @@ const Admin = () => {
             router.push('/admin');
         }
         searchAllData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [token, montoAhorro, montoInversion, montoGasto, montoDeuda]);
 
     const handleClickAhorro = (type) => {
@@ -89,7 +90,7 @@ const Admin = () => {
             <meta property="image:height" content="135" /> 
         </Head>
         <HeaderAdmin/>
-        <div id="teams" class="bg-slate-100 pb-6 cards-money">
+        <div id="teams" className="bg-slate-100 pb-6 cards-money">
             {nextStep === 0 && (
                 <>
                 <CardMoney description='Ahorro' money={montoAhorro} handleClickBtn={handleClickAhorro} />

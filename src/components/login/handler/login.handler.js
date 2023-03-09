@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { updateFetchAxios, fetchAxios } from '../../../utils/configAxios';
 
 const handlerSubmitLogin = async({ formData, setToken }) => {

@@ -1,5 +1,7 @@
+// eslint-disable-next-line import/no-anonymous-default-export
+// eslint-disable-next-line jsx-a11y/alt-text
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark, faWhatsapp } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
