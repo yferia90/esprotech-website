@@ -6,6 +6,31 @@
   height: 50vh;
 }
 
+.width-line {
+  width: 4rem;
+}
+
+.cards-money {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 13px;
+}
+
+.bts-in-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-money-one {
+  padding: 0.74rem;
+  margin: 0.7rem;
+}
+
+.in-card {
+  margin-top: 35px;
+}
+
 .whatsapp {
   min-width: 50px;
   min-height: 50px;

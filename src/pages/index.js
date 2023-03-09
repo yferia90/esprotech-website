@@ -1,11 +1,10 @@
 import Head from "next/head";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import { useEffect, useState } from "react";
-import Develop from "components/develop";
-import Services from "components/services";
-import About from "components/about";
-import Contact from "components/contact";
+import Develop from "../components/develop";
+import Services from "../components/services";
+import About from "../components/about";
+import Contact from "../components/contact";
 
 export default function Home(props) {
   

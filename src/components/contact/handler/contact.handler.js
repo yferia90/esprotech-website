@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Env from '../../../env';
+import Env from '../../../../env';
 import constant from '../constants/contact.constants';
 
 const handlerSubmitContact = async({ changeFormSuccess, changeFormFailed, setMessageFailed, formData, resetForm, setDisabled }) => {

@@ -60,9 +60,9 @@ const Contact = () => {
 					}
 					return errors;
 				}}
-				onSubmit={(values, { resetForm }) => {
+				onSubmit={(values) => {
 					setDisabled(true);
-					handlerSubmitContact(values, resetForm);
+					handlerSubmitContact(values);
 				}}
 			>
 				{({ errors }) => (					
