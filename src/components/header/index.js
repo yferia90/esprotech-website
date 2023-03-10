@@ -54,6 +54,9 @@ const Header =  () => {
           <Link href="#contact"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
           hover:text-red-600 hover:bg-transparent transition-all duration-300"
            >Contáctanos</a></Link>
+           <Link href="/admin"><a className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+          hover:text-red-600 hover:bg-transparent transition-all duration-300"
+           >Login</a></Link>
         </nav>
       </div>
     </header>
@@ -76,6 +79,9 @@ const Header =  () => {
       <Link href="#contact"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
       hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
        >Contáctanos</a></Link>
+      <Link href="/admin"><a onClick={menu} className="py-2 px-3 text-lg border border-transparent text-slate-800 rounded-xl hover:border-red-600
+      hover:text-red-600 hover:bg-transparent transition-all duration-300 block w-full text-center"
+       >Login</a></Link>
     </nav>
 
     {/*IMAGEN DE PORTADA*/}

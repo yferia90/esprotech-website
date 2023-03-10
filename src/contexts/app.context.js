@@ -1,7 +1,4 @@
-import React, { useContext, createContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import axios from 'axios';
-
+import React, { useContext, createContext, useState } from 'react';
 // Creando un contexto global para la APP
 export const AppContext = createContext(null);
 
@@ -12,13 +9,6 @@ export const AppContextProvider = ({ children }) => {
     const [montoInversion, setMontoInversion] = useState(0.0);
     const [montoGasto, setMontoGasto] = useState(0.0);
     const [montoDeuda, setMontoDeuda] = useState(0.0);
-    const router = useRouter();
-
-    useEffect(() => {
-        if(!token){
-            router.push('/admin');
-        }
-    }, [token]);
 
     const values = React.useMemo(() => (
         {
