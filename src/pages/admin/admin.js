@@ -7,6 +7,7 @@ import Footer from "../../components/footer";
 import HeaderAdmin from '../../components/header/header-admin';
 import useAppContext from '../../contexts/app.context';
 import FinancialForm from '../../components/form/financial-form';
+import SimpleTable from '../../components/table/simple-table';
 
 const Admin = () => {
     const { 
@@ -45,9 +46,9 @@ const Admin = () => {
     }
 
     useEffect(() => {
-        if(!token){
-            router.push('/admin');
-        }
+        // if(!token){
+        //     router.push('/admin');
+        // }
         searchAllData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [token, montoAhorro, montoInversion, montoGasto, montoDeuda]);
@@ -61,7 +62,7 @@ const Admin = () => {
     }
 
     const handleClickGastos = (type) => {
-        type == 1 ? setNextStep(5) : setNextStep(6);
+        type == 1 ? setNextStep(5) : type === 2 ? setNextStep(6) : setNextStep(9);
     }
 
     const handleClickDeuda= (type) => {
@@ -90,12 +91,22 @@ const Admin = () => {
             <meta property="image:height" content="135" /> 
         </Head>
         <HeaderAdmin/>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].includes(nextStep) && (
+            <button onClick={(event) => {
+                event.preventDefault();
+                setNextStep(0);
+            }} type="button" className="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 svg-back">
+                <svg aria-hidden="true" className="w-5 h-5"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+                </svg>
+            </button>
+        )}
         <div id="teams" className="bg-slate-100 pb-6 cards-money">
             {nextStep === 0 && (
                 <>
                 <CardMoney description='Ahorro' money={montoAhorro} handleClickBtn={handleClickAhorro} />
                 <CardMoney description='Inversiones' money={montoInversion} handleClickBtn={handleInversiones} />
-                <CardMoney description='Gastos' money={montoGasto} handleClickBtn={handleClickGastos} />
+                <CardMoney description='Gastos' showList money={montoGasto} handleClickBtn={handleClickGastos} />
                 <CardMoney description='Deuda' money={montoDeuda} handleClickBtn={handleClickDeuda} /></>
             )}
             {nextStep === 1 && (
@@ -137,7 +148,10 @@ const Admin = () => {
                 <FinancialForm add={false} type={'deuda'} nextStep={() => {
                     setNextStep(0);
                 }} />
-            )}            
+            )}
+            {nextStep === 9 && (
+                <SimpleTable />
+            )}
         </div>
         <Footer />
     </>

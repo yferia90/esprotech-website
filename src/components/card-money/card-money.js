@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const CardMoney = ({ handleClickBtn, money = 0.0, description }) => {
+const CardMoney = ({ handleClickBtn, money = 0.0, description, showList = false }) => {
 
     return (
         <> 
@@ -13,6 +13,12 @@ const CardMoney = ({ handleClickBtn, money = 0.0, description }) => {
                     <div className="flex items-center justify-between in-card">
                         <span className="text-3xl font-bold text-gray-900 dark:text-white">${money}</span>
                         <div className="bts-in-card">
+                            {showList && (
+                                <button onClick={(event) => {
+                                    event.preventDefault();
+                                    handleClickBtn(3);
+                                }} type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Detalles</button>
+                            )}
                             <button onClick={(event) => {
                                 event.preventDefault();
                                 handleClickBtn(1);
