@@ -18,7 +18,7 @@ const SimpleTable = () => {
 
     return (
         <>
-            <table class="table-fixed">
+            <table className="table-fixed">
                 <thead>
                     <tr>
                         <th>Monto</th>
