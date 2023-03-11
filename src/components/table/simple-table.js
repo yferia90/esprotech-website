@@ -14,6 +14,7 @@ const SimpleTable = () => {
 
     useEffect(() => {
         getTable();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -26,8 +27,8 @@ const SimpleTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data && data.map(item => (
-                        <tr>
+                    {data && data.map((item, index) => (
+                        <tr key={index}>
                             <td>{item.monto}</td>
                             <td>{item.message}</td>
                         </tr>
