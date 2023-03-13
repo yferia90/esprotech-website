@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Head from "next/head";
 import { useRouter } from 'next/router';
+import enumOperations from 'src/utils/enumOperations';
+import handlerErrors from 'src/utils/handlerErrors';
 import { fetchAxios } from '../../utils/configAxios';
 import CardMoney from '../../components/card-money/card-money';
 import Footer from "../../components/footer";
@@ -22,8 +24,9 @@ const Admin = () => {
         setMontoDeuda,
     } = useAppContext();
 
-    const [type, setType] = useState('');
+    const [typeOperation, setTypeOperation] = useState('');
     const [nextStep, setNextStep] = useState(0);
+    const [montoTotalOperation, setMontoTotalOperation] = useState(0.0);
     const [authorization, setAutorization] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
@@ -42,13 +45,15 @@ const Admin = () => {
                 setMontoGasto(gasto);
                 setMontoDeuda(deuda);
             }
-        }catch(err){}
+        }catch(err){
+            const message = err?.response?.data?.message;
+            if(handlerErrors.LOGIN.includes(message)){
+                router.push('/admin');
+            }
+        }
     }
 
     useEffect(() => {
-        // if(!token){
-        //     router.push('/admin');
-        // }
         searchAllData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [token, montoAhorro, montoInversion, montoGasto, montoDeuda]);
@@ -58,15 +63,33 @@ const Admin = () => {
     }
 
     const handleInversiones = (type) => {
-        type == 1 ? setNextStep(3) : setNextStep(4);
+        if(type == 1) setNextStep(3)
+        else if(type == 1) setNextStep(4);
+        else {
+            setTypeOperation(enumOperations.inversion);
+            setMontoTotalOperation(montoInversion);
+            setNextStep(9);
+        }
     }
 
     const handleClickGastos = (type) => {
-        type == 1 ? setNextStep(5) : type === 2 ? setNextStep(6) : setNextStep(9);
+        if(type == 1) setNextStep(5);
+        else if(type === 2) setNextStep(6)
+        else {
+            setTypeOperation(enumOperations.gasto);
+            setMontoTotalOperation(montoGasto);
+            setNextStep(9);
+        }
     }
 
     const handleClickDeuda= (type) => {
-        type == 1 ? setNextStep(7) : setNextStep(8);
+        if(type == 1) setNextStep(7)
+        else if(type === 2) setNextStep(8)
+        else {
+            setTypeOperation(enumOperations.deuda);
+            setMontoTotalOperation(montoDeuda);
+            setNextStep(9);
+        }
     }
 
     // if(!authorization && !isLoading) {
@@ -105,9 +128,9 @@ const Admin = () => {
             {nextStep === 0 && (
                 <>
                 <CardMoney description='Ahorro' money={montoAhorro} handleClickBtn={handleClickAhorro} />
-                <CardMoney description='Inversiones' money={montoInversion} handleClickBtn={handleInversiones} />
+                <CardMoney description='Inversiones' showList money={montoInversion} handleClickBtn={handleInversiones} />
                 <CardMoney description='Gastos' showList money={montoGasto} handleClickBtn={handleClickGastos} />
-                <CardMoney description='Deuda' money={montoDeuda} handleClickBtn={handleClickDeuda} /></>
+                <CardMoney description='Deuda' showList money={montoDeuda} handleClickBtn={handleClickDeuda} /></>
             )}
             {nextStep === 1 && (
                 <FinancialForm add={true} type={'ahorro'} nextStep={() => {
@@ -150,7 +173,7 @@ const Admin = () => {
                 }} />
             )}
             {nextStep === 9 && (
-                <SimpleTable />
+                <SimpleTable typeOperation={typeOperation} montoTotalOperation={montoTotalOperation} />
             )}
         </div>
         <Footer />
